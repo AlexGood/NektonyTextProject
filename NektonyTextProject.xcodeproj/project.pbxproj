@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		809B5F9D821FBE866ED9BEC8 /* Pods_NektonyTextProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2296B184F55E346775B8EEF /* Pods_NektonyTextProject.framework */; };
 		FA26FF371FAA3CA100E007EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26FF361FAA3CA100E007EE /* AppDelegate.swift */; };
-		FA26FF391FAA3CA100E007EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26FF381FAA3CA100E007EE /* ViewController.swift */; };
+		FA26FF391FAA3CA100E007EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26FF381FAA3CA100E007EE /* MainViewController.swift */; };
 		FA26FF3B1FAA3CA100E007EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA26FF3A1FAA3CA100E007EE /* Assets.xcassets */; };
 		FA26FF3E1FAA3CA100E007EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA26FF3C1FAA3CA100E007EE /* Main.storyboard */; };
+		FA26FF511FAA459000E007EE /* MainVCTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26FF4F1FAA459000E007EE /* MainVCTableViewDelegate.swift */; };
+		FA26FF551FAA4BBF00E007EE /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26FF531FAA4BBF00E007EE /* Directory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25699D88AB1276A0214545AA /* Pods-NektonyTextProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NektonyTextProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NektonyTextProject/Pods-NektonyTextProject.debug.xcconfig"; sourceTree = "<group>"; };
+		F2296B184F55E346775B8EEF /* Pods_NektonyTextProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NektonyTextProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F279AA2055924AB99E20F371 /* Pods-NektonyTextProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NektonyTextProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-NektonyTextProject/Pods-NektonyTextProject.release.xcconfig"; sourceTree = "<group>"; };
 		FA26FF331FAA3CA100E007EE /* NektonyTextProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NektonyTextProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA26FF361FAA3CA100E007EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA26FF381FAA3CA100E007EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA26FF381FAA3CA100E007EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA26FF3A1FAA3CA100E007EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA26FF3D1FAA3CA100E007EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA26FF3F1FAA3CA100E007EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA26FF401FAA3CA100E007EE /* NektonyTextProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NektonyTextProject.entitlements; sourceTree = "<group>"; };
+		FA26FF4F1FAA459000E007EE /* MainVCTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCTableViewDelegate.swift; sourceTree = "<group>"; };
+		FA26FF531FAA4BBF00E007EE /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +36,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809B5F9D821FBE866ED9BEC8 /* Pods_NektonyTextProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D40DC43E37DE525014F99BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25699D88AB1276A0214545AA /* Pods-NektonyTextProject.debug.xcconfig */,
+				F279AA2055924AB99E20F371 /* Pods-NektonyTextProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99FA9392A367A07DE8466D56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2296B184F55E346775B8EEF /* Pods_NektonyTextProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA26FF2A1FAA3CA100E007EE = {
 			isa = PBXGroup;
 			children = (
 				FA26FF351FAA3CA100E007EE /* NektonyTextProject */,
 				FA26FF341FAA3CA100E007EE /* Products */,
+				7D40DC43E37DE525014F99BD /* Pods */,
+				99FA9392A367A07DE8466D56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,13 +82,23 @@
 			isa = PBXGroup;
 			children = (
 				FA26FF361FAA3CA100E007EE /* AppDelegate.swift */,
-				FA26FF381FAA3CA100E007EE /* ViewController.swift */,
+				FA26FF4E1FAA457100E007EE /* MainVC */,
+				FA26FF531FAA4BBF00E007EE /* Directory.swift */,
 				FA26FF3A1FAA3CA100E007EE /* Assets.xcassets */,
 				FA26FF3C1FAA3CA100E007EE /* Main.storyboard */,
 				FA26FF3F1FAA3CA100E007EE /* Info.plist */,
 				FA26FF401FAA3CA100E007EE /* NektonyTextProject.entitlements */,
 			);
 			path = NektonyTextProject;
+			sourceTree = "<group>";
+		};
+		FA26FF4E1FAA457100E007EE /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA26FF381FAA3CA100E007EE /* MainViewController.swift */,
+				FA26FF4F1FAA459000E007EE /* MainVCTableViewDelegate.swift */,
+			);
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,9 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA26FF431FAA3CA100E007EE /* Build configuration list for PBXNativeTarget "NektonyTextProject" */;
 			buildPhases = (
+				9BF4D22B5353F795D59D0335 /* [CP] Check Pods Manifest.lock */,
 				FA26FF2F1FAA3CA100E007EE /* Sources */,
 				FA26FF301FAA3CA100E007EE /* Frameworks */,
 				FA26FF311FAA3CA100E007EE /* Resources */,
+				06F07667B23B7EC56F3D7274 /* [CP] Embed Pods Frameworks */,
+				62D653B1886E62097A6A15DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,13 +170,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06F07667B23B7EC56F3D7274 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NektonyTextProject/Pods-NektonyTextProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NektonyTextProject/Pods-NektonyTextProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62D653B1886E62097A6A15DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NektonyTextProject/Pods-NektonyTextProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BF4D22B5353F795D59D0335 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NektonyTextProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA26FF2F1FAA3CA100E007EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA26FF391FAA3CA100E007EE /* ViewController.swift in Sources */,
+				FA26FF511FAA459000E007EE /* MainVCTableViewDelegate.swift in Sources */,
+				FA26FF391FAA3CA100E007EE /* MainViewController.swift in Sources */,
 				FA26FF371FAA3CA100E007EE /* AppDelegate.swift in Sources */,
+				FA26FF551FAA4BBF00E007EE /* Directory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +358,7 @@
 		};
 		FA26FF441FAA3CA100E007EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25699D88AB1276A0214545AA /* Pods-NektonyTextProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NektonyTextProject/NektonyTextProject.entitlements;
@@ -277,6 +375,7 @@
 		};
 		FA26FF451FAA3CA100E007EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F279AA2055924AB99E20F371 /* Pods-NektonyTextProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NektonyTextProject/NektonyTextProject.entitlements;
