@@ -23,23 +23,15 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifiers.nameCell), owner: nil) as? NSTableCellView
+        
         if tableColumn == tableView.tableColumns[0] {
-            let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifiers.nameCell), owner: nil) as? NSTableCellView
             
             cell?.textField?.stringValue = self.files[row].name
             cell?.imageView?.image = self.files[row].icon
             
             return cell
         } else if tableColumn == tableView.tableColumns[1] {
-            let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifiers.hashCell), owner: nil) as? NSTableCellView
-            
-            let view = NSView()
-            view.frame.size.width = 1280
-            view.frame.size.height = 800
-            view.layer?.backgroundColor = .black
-            cell?.addSubview(view)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            
             let data = NSData(contentsOfFile: String(describing: self.files[row].url.path)) as Data?
             if data != nil{
                 DispatchQueue.global(qos: .background).async {
@@ -54,13 +46,10 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
             
             return cell
         } else if tableColumn == tableView.tableColumns[2] {
-            let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifiers.sizeCell), owner: nil) as? NSTableCellView
-            
             cell?.textField?.stringValue = self.files[row].isFolder ? "--" : sizeFormatter.string(fromByteCount: self.files[row].size)
             
             return cell
         }else if tableColumn == tableView.tableColumns[3] {
-            let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifiers.modifDataCell), owner: nil) as? NSTableCellView
             
             cell?.textField?.stringValue = self.files[row].date
             
