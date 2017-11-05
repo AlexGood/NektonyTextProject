@@ -7,25 +7,27 @@
 //
 
 import Cocoa
+import FilesProvider
 
 class MainViewController: NSViewController {
-
+    
     var files = [Metadata]()
     var directory: Directory?
     var link = URL(string:"")
-    var sortOrder = Directory.FileOrder.Name
-    var sortAscending = true
+    
     let sizeFormatter = ByteCountFormatter()
     @IBOutlet weak var tableView: NSTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     func reloadFileList() {
-        files = (directory?.getFiles())!
-        
-        tableView.reloadData()
+        if let files = directory?.getFiles() {
+            self.files = files
+            tableView.reloadData()
+        }
     }
     
     @IBAction func chooseFolder(_ sender: NSButton) {
@@ -36,10 +38,23 @@ class MainViewController: NSViewController {
         
         let i = openPanel.runModal()
         if(i == NSApplication.ModalResponse.OK){
-            self.directory = Directory(folderURL: openPanel.url!)
-            self.link = openPanel.url!
-            reloadFileList()
+            if let openPanelUrl = openPanel.url{
+                
+                let documentsProvider = LocalFileProvider(baseURL: openPanelUrl)
+                
+                documentsProvider.registerNotifcation(path: "/") {
+                    self.updateList(openPanelUrl: openPanelUrl)
+                }
+                
+                self.updateList(openPanelUrl: openPanelUrl)
+            }
         }
+    }
+    
+    func updateList(openPanelUrl: URL){
+        self.directory = Directory(folderURL: openPanelUrl)
+        self.link = openPanelUrl
+        reloadFileList()
     }
 }
 

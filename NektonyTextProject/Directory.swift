@@ -68,13 +68,13 @@ public struct Directory  {
             
             while let url = enumerator.nextObject() as? URL {
                 do {
-                    let properties = try  (url as NSURL).resourceValues(forKeys: requiredAttributes)
+                    let properties = try url.resourceValues(forKeys: Set(requiredAttributes))
                     files.append(Metadata(fileURL: url,
-                                          name: properties[URLResourceKey.localizedNameKey] as? String ?? "",
-                                          date: dateFormatter.string(from: properties[URLResourceKey.contentModificationDateKey] as? Date ?? Date.distantPast),
-                                          size: (properties[URLResourceKey.fileSizeKey] as? NSNumber)?.int64Value ?? 0,
-                                          icon: properties[URLResourceKey.effectiveIconKey] as? NSImage  ?? NSImage(),
-                                          isFolder: (properties[URLResourceKey.isDirectoryKey] as? NSNumber)?.boolValue ?? false,
+                                          name: properties.localizedName ?? "",
+                                          date: dateFormatter.string(from: properties.contentModificationDate ?? Date.distantPast),
+                                          size: Int64(properties.fileSize ?? 0),
+                                          icon: properties.effectiveIcon as? NSImage  ?? NSImage(),
+                                          isFolder: properties.isDirectory ?? false,
                                           color: NSColor()))
                 }
                 catch {
@@ -88,3 +88,4 @@ public struct Directory  {
         return self.files
     }
 }
+
